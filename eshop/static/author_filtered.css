@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: #caecea;  
+  overflow-x: hidden;
+}
+
+header {
+  margin: 5px;
+  display:flex;
+  justify-content: center;
+  background-color: aqua;
+}
+.head {
+  position:absolute;
+  right: 3%;
+  top: 10px;
+}
+.filter {
+  display: flex;
+  align-items: center;
+}
+
+.product-grid {
+    margin: 3%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 4 colonnes égales */
+    gap: 20px; /* Espacement entre les cartes */
+  }
+  
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+.product-card img {
+    width: 85%;
+    height: 65%;
+    margin: auto;
+    border-radius: 10px; /* Coins arrondis */
+    margin-bottom: 10px; /* Espacement en bas de l'image */
+  }
+  
+.product-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+h3, h4, h5 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-align: center;
+}
+
+h3 {
+  font-weight: bold;
+}
+#retour {
+  position: relative;
+  left: 45%;
+  bottom: 5%;
+}

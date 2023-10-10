@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+body {
+  background-color: #caecea;  
+  overflow-x: hidden;
+}
+
+.product-grid {
+    margin: 3%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colonnes égales */
+    gap: 15px; /* Espacement entre les cartes */
+  }
+  
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+.product-card img {
+    width: 65%;
+    margin: auto;
+    border-radius: 10px; /* Coins arrondis */
+    margin-bottom: 10px; /* Espacement en bas de l'image */
+  }
+  
+.product-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+h3, h4, h5 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-align: center;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #haut {
+    position: relative;
+    left: 45%;
+    bottom: 5%;
+  }
+  #haut::before, #haut::after {
+    content: '\0025B2 \0025B2 ';
+    color: rgb(65, 110, 235);
+  }

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'detail.css' %}">
+
+<div class="content-detailed">
+    <div class="content-head">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        <div class="content-head-info">
+            <h3>{{ product.name }} - {{ product.title }}</h3>
+            <p>Prix: {{ product.price|floatformat:"2" }} €</p>
+            {% if product.quantity > 1 %}
+                <p id="stock_green"><strong>Quantité en stock: {{ product.quantity }}</strong></p>
+            {% else %}
+                <p id="stock_red">Quantité en stock: {{ product.quantity }}</p>
+            {% endif %}
+            <p> <strong>Description:</strong> {{ product.description }}</p>
+            {% if product.quantity > 0 %}
+                {% if user.is_authenticated %}            
+                    <a href="{% url 'addToCart' product.slug %}">Ajouter l'article au panier</a><br>
+                {% else %}
+                    <p id="unsubscribe">Vous devez être inscrit et connecté pour commander cet article</p><br>
+                {% endif %}
+            {% else %}
+                <p>Cet article n'est plus en stock</p><br> 
+            {% endif %}             
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block goback %}
+    <p id="retour">
+        <a href="{% url 'index' %}">Retour à la page d'accueil</a>
+    </p>
+{% endblock %}

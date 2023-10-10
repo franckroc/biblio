@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block filter %}
+<div class="filter">
+    <label for="search"><strong>Rechercher un livre par auteur</strong></label>
+    <select name="selectAuthor" id="selectAuthor" onchange="redirectToAuthorPage(this)">
+        <option value="all">Tous les livres</option>
+        {% for product in products_filtered %}
+            <option value="{{ product.name }}">{{ product.name }} ({{ product.count }})</option>
+        {% endfor %}
+    </select>
+</div>
+    <script>
+        function redirectToAuthorPage(select) {
+            if (select.value != "all") {
+                window.location.href = "filter/" + select.value;
+            } else {
+                window.location.href = "";
+            }
+        }
+    </script>
+{% endblock %}
+
+
+{% block content %}
+<div class="product-grid">
+    {% for product in products %}
+        {% if product.quantity > 0 %}
+        <div class="product-card">
+            <img src="{{ product.image.url }}" alt="{{ product.name }} - {{ product.title }}">
+            <h3 id="product-name">{{ product.name }}</h3>
+            <h4 id="product-title">{{ product.title }}</h4>
+            <h5 id="product-price">{{ product.price|floatformat:"2" }} €</h5>
+            <div class="product-info">
+                <a class="btn btn-primary" href="{{ product.get_absolute_url }}">Voir l'article</a>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block goback %}
+    <a id="haut" href="#">Haut</a>
+{% endblock %}
+

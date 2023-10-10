@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    
+    <div class="signup-content">
+        <h1>Formulaire d'inscription</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <p>
+                <label for="username">Nom d'utilisateur :</label>
+                <input id="username" type="text" name="username" required>
+            </p>
+            <p>
+                <label for="password">Mot de passe :</label>
+                <input id="password" type="password" name="password" required>
+            </p>
+            <p>
+                <label for="password2">Confirmer le mot de passe :</label>
+                <input id="password2" type="password" name="password2" required>
+            </p>
+            <p>
+                <label for="email">Adresse email :</label>
+                <input id="email" type="email" name="email" required>
+            </p>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+{% endblock %}

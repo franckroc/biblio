@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'author_filtered.css' %}">
+
+<div class="product-grid">
+    {% for product in products_filtered %}
+        {% if product.quantity > 0 %}
+        <div class="product-card">
+            <img src="{{ product.image.url }}" alt="{{ product.name }} - {{ product.title }}">
+            <h3 id="product-name">{{ product.name }}</h3>
+            <h4 id="product-title">{{ product.title }}</h4>
+            <h5 id="product-price">{{ product.price|floatformat:"2" }} €</h5>
+            <div class="product-info">
+                <a class="btn btn-primary" href="{{ product.get_absolute_url }}">Voir l'article</a>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block goback %}
+    <p id="retour">
+        <a href="{% url 'index' %}">Retour à la page d'accueil</a>
+    </p>
+{% endblock %}

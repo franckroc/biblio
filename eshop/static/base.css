@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+/* header */
+body {
+    background-color: #caecea;
+}
+
+header {
+    margin: 5px;
+    display:flex;
+    justify-content: center;
+    background-color: aqua;
+}
+.head {
+    position:absolute;
+    right: 3%;
+    top: 10px;
+}
+/* filtre */
+.filter {
+    display: flex;
+    align-items: center;
+}
