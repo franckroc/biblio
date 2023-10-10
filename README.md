@@ -13,7 +13,7 @@ Site e-commerce de livres en retail - non déployé
          front: cartes livres  APP: shop
 
        - [A faire:]
-         front product/detail
+         formulaire inscription
          solution de paiement stripe
 
        - [Evolution:] 
