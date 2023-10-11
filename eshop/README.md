@@ -9,10 +9,10 @@ Site e-commerce de livres en retail - non déployé
          config DB - models.py (sqllite)
          modif interface administration
          gestion utilisateur (connexion/inscription) APP: accounts
-         front: page d'accueill / livre détaillé / panier / login  APP: shop
+         front: page d'accueill / livre détaillé / panier / login /signup
 
        - [A faire:]
-         front formulaire inscription: logout
+         Js formulaire inscription (ctrl sqli, format email, format password)
          solution de paiement stripe
 
        - [Evolution:] 
